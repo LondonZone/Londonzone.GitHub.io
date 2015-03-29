@@ -244,3 +244,14 @@ overflow: hidden;
 margin: 0 0 0em 0; !important;
 text-align: center;!important;
 }
+
+
+@media only screen and (max-width: 445px){
+  
+    #mc_embed_signup  .mc-field-group input {
+        width:40%;
+    }
+    select{
+    	width:40%;
+    }
+}
