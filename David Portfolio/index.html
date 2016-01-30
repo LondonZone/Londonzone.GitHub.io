@@ -3,8 +3,6 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="css/animations.css">
-    <link rel="stylesheet" type="text/css" href="css/footer_styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <meta charset="UTF-8"> <!#set characters >
@@ -12,8 +10,7 @@
     <title> David London  | Developer | Designer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="icon" type="image/png" href="img/icon.png">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/goToByScroll.js" type="text/javascript"></script>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
     <script>
     function GoToByScroll(id) {
       $('html, body').animate({
@@ -22,20 +19,18 @@
     }
     </script>
     <script>
-      $(function() {
-          $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-              var target = $(this.hash);
-              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-              if (target.length) {
-                $('html,body').animate({
-                  scrollTop: target.offset().top
-                }, 1000);
-                return false;
-              }
-            }
-          });
-        });
+        function scrollTo (element, to, duration) {
+            if (duration <= 0) return;
+            var difference = to - element.scrollTop;
+            var perTick = difference / duration * 10;
+
+            setTimeout(function() {
+                if (element.scrollTop >= to) return;
+                element.scrollTop = element.scrollTop + perTick;
+                scrollTo(element, to, duration - 10);
+            }, 10);
+        }
+
 
     </script>
     <script>
@@ -51,21 +46,24 @@
   <body>
     <header>
       <div id="header-container" class="">
+        <div class="nav-trigger">
         <nav class="navbar-hero hidden-xs">
               <div class="navbar-container">
                   <ul class="navbar-links" id="nav-left">
-                  <li><a href="#about" class="about-link">A B O U T</a></li>
+                  <li><a  onlick="scrollTo('About',1,2)" href="#about" class="about-link">A B O U T</a></li>
                   <li><a href="#contact" class="contact-link">C O N T A C T</a></li>
                 </ul>
               </div>
                 <ul class="navbar-links" id="nav-right">
                   <li><a href="#resume" class="resume-link">R E S U M E</a></li>
-                  <li><a href="#portfolio" class="contact-link">P R O J E C T S</a></li>
+                  <li><a href="#portfolio" class="work-link">P R O J E C T S</a></li>
                 </ul>
               </div> <!--end of navbar container -->
         </nav> 
+        <div>
         <div id="header-titles">
-          <h1>David London Design  </h1>
+          <div id="dld-title" class = "fadeInLeft animated"><h1 id="header-title-name">David London Design </h1> 
+          </div>
           <div class="social-links">
             <a href="https://www.twitter.com/TheDavidLondon" title="@CodeSharkDave on Twitter">
            <i class="icon fa fa-twitter"></i>
@@ -110,14 +108,13 @@
         </div>
     </section> -->
       
-      <!--<a class="more" id="header-more" title="Learn more">↓</a> !-->
     </header>
     <section id="about">
       <h4>Hi, I'm David and I like creating things.</h4>
       <div class="section-container">
 
          <div id="about-photo" class="col-md-4">
-            <img src="http://res.cloudinary.com/david-london/image/upload/v1453672015/headshot.jpg" align="left" class="about-photo"/>
+            <img src="http://res.cloudinary.com/david-london/image/upload/v1454102452/headshot-about.jpg" align="left" class="about-photo"/>
         </div>
         
         <div id="about-text" class="col-md-8"> 

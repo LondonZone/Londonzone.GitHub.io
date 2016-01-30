@@ -1353,12 +1353,22 @@ form p {
 /*
 ==============================================
 
+
+
 /*
 ==============================================
 slideDown
 ==============================================
 */
 /* line 11, sass/_animation.scss */
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* line 18, sass/_animation.scss */
 .slideDown {
   animation-name: slideDown;
   -webkit-animation-name: slideDown;
@@ -1414,7 +1424,7 @@ slideDown
 slideUp
 ==============================================
 */
-/* line 73, sass/_animation.scss */
+/* line 80, sass/_animation.scss */
 .slideUp {
   animation-name: slideUp;
   -webkit-animation-name: slideUp;
@@ -1470,7 +1480,7 @@ slideUp
 slideLeft
 ==============================================
 */
-/* line 135, sass/_animation.scss */
+/* line 142, sass/_animation.scss */
 .slideLeft {
   animation-name: slideLeft;
   -webkit-animation-name: slideLeft;
@@ -1526,7 +1536,7 @@ slideLeft
 slideRight
 ==============================================
 */
-/* line 197, sass/_animation.scss */
+/* line 204, sass/_animation.scss */
 .slideRight {
   animation-name: slideRight;
   -webkit-animation-name: slideRight;
@@ -1582,7 +1592,7 @@ slideRight
 slideExpandUp
 ==============================================
 */
-/* line 259, sass/_animation.scss */
+/* line 266, sass/_animation.scss */
 .slideExpandUp {
   animation-name: slideExpandUp;
   -webkit-animation-name: slideExpandUp;
@@ -1656,7 +1666,7 @@ slideExpandUp
 expandUp
 ==============================================
 */
-/* line 339, sass/_animation.scss */
+/* line 346, sass/_animation.scss */
 .expandUp {
   animation-name: expandUp;
   -webkit-animation-name: expandUp;
@@ -1700,7 +1710,7 @@ expandUp
 fadeIn
 ==============================================
 */
-/* line 388, sass/_animation.scss */
+/* line 395, sass/_animation.scss */
 .fadeIn {
   animation-name: fadeIn;
   -webkit-animation-name: fadeIn;
@@ -1745,12 +1755,30 @@ fadeIn
     opacity: 1;
   }
 }
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+/* line 459, sass/_animation.scss */
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+
 /*
 ==============================================
 expandOpen
 ==============================================
 */
-/* line 444, sass/_animation.scss */
+/* line 471, sass/_animation.scss */
 .expandOpen {
   animation-name: expandOpen;
   -webkit-animation-name: expandOpen;
@@ -1800,7 +1828,7 @@ expandOpen
 bigEntrance
 ==============================================
 */
-/* line 500, sass/_animation.scss */
+/* line 527, sass/_animation.scss */
 .bigEntrance {
   animation-name: bigEntrance;
   -webkit-animation-name: bigEntrance;
@@ -1876,7 +1904,7 @@ bigEntrance
 hatch
 ==============================================
 */
-/* line 581, sass/_animation.scss */
+/* line 608, sass/_animation.scss */
 .hatch {
   animation-name: hatch;
   -webkit-animation-name: hatch;
@@ -1941,7 +1969,7 @@ hatch
 bounce
 ==============================================
 */
-/* line 654, sass/_animation.scss */
+/* line 681, sass/_animation.scss */
 .bounce {
   animation-name: bounce;
   -webkit-animation-name: bounce;
@@ -1999,7 +2027,7 @@ bounce
 pulse
 ==============================================
 */
-/* line 718, sass/_animation.scss */
+/* line 745, sass/_animation.scss */
 .pulse {
   animation-name: pulse;
   -webkit-animation-name: pulse;
@@ -2042,7 +2070,7 @@ pulse
 floating
 ==============================================
 */
-/* line 765, sass/_animation.scss */
+/* line 792, sass/_animation.scss */
 .floating {
   animation-name: floating;
   -webkit-animation-name: floating;
@@ -2079,7 +2107,7 @@ floating
 tossing
 ==============================================
 */
-/* line 806, sass/_animation.scss */
+/* line 833, sass/_animation.scss */
 .tossing {
   animation-name: tossing;
   -webkit-animation-name: tossing;
@@ -2116,7 +2144,7 @@ tossing
 pullUp
 ==============================================
 */
-/* line 847, sass/_animation.scss */
+/* line 874, sass/_animation.scss */
 .pullUp {
   animation-name: pullUp;
   -webkit-animation-name: pullUp;
@@ -2180,7 +2208,7 @@ pullUp
 pullDown
 ==============================================
 */
-/* line 916, sass/_animation.scss */
+/* line 943, sass/_animation.scss */
 .pullDown {
   animation-name: pullDown;
   -webkit-animation-name: pullDown;
@@ -2244,7 +2272,7 @@ pullDown
 stretchLeft
 ==============================================
 */
-/* line 985, sass/_animation.scss */
+/* line 1012, sass/_animation.scss */
 .stretchLeft {
   animation-name: stretchLeft;
   -webkit-animation-name: stretchLeft;
@@ -2308,7 +2336,7 @@ stretchLeft
 stretchRight
 ==============================================
 */
-/* line 1054, sass/_animation.scss */
+/* line 1081, sass/_animation.scss */
 .stretchRight {
   animation-name: stretchRight;
   -webkit-animation-name: stretchRight;
@@ -2662,8 +2690,8 @@ header {
   max-width: 250px;
   border-radius: 50%;
   margin-right: 10%;
-  min-height: 15em;
-  height: 15em;
+  min-height: auto;
+  height: 250px;
 }
 /* line 315, sass/style.scss */
 #about h4 {
@@ -3046,3 +3074,7 @@ li a:hover:after {
 }
 
 /** ===================== End of Navbar Styles =================== **/
+/* line 673, sass/style.scss */
+#dld-title {
+  animation-duration: 2s !important;
+}
