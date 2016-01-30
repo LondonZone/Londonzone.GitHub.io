@@ -7917,7 +7917,7 @@ footer h3 {
 @media screen and (min-width: 21in) and (max-width: 23in) {
   /* line 569, sass/style.scss */
   #header-titles h1 {
-    margin-top: 650px;
+    margin-top: 650px !important;
   }
 }
 /*================RESPONSIVE SCSS ===================================== */
